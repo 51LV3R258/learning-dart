@@ -32,6 +32,10 @@ void showOutput(var msg) {
   print(msg);
 }
 
-dynamic sum1({var num1, var num2}) => num1 + num2;
+dynamic sum1({
+  //* Haciendo obligatorios los paramétros with required
+  required var num1,
+  required var num2
+}) => num1 + num2;
 dynamic sum2(var num1, {var num2}) => num1 + (num2 ?? 0);
 dynamic sum3(var num1, [var num2 = 0]) => num1 + num2;
