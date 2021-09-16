@@ -1,8 +1,8 @@
 //Class
 
 class Person {
-  late String name;
-  late int age;
+  String name;
+  int age;
 
   /* Constructor */
   // Person(String name, [int age = 23]) {
@@ -12,10 +12,14 @@ class Person {
   Person(this.name, [this.age = 23]);
 
   /* Named constructor */
-  Person.guest() {
-    this.name = 'Guest'; // or name = 'Guest'
-    this.age = 18; // or age = 18
-  }
+  // Person.guest() {
+  //   this.name = 'Guest'; // or name = 'Guest'
+  //   this.age = 18; // or age = 18
+
+  // * Corregido para remover los parametros opcionales en la clase
+  Person.guest()
+      : this.name = 'Guest', // or name = 'Guest'
+        this.age = 18; // or age = 18
 
   void showOutput() {
     print(name);
