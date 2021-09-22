@@ -1,16 +1,25 @@
 // * Async Tasks
 
-void main() {
+void main() async {
   print('Antes de la petición');
 
-  httpGet('https://api.nasa.com/aliens').then((data) {
+  /* httpGet('https://api.nasa.com/aliens').then((data) {
     print(data.toUpperCase());
-  });
+  }); */
+  final response = await httpGet('https://api.nasa.com/aliens');
+  print(response);
+
+  final nombre = await getNombre('10');
+  print(nombre);
 
   print('Después de la petición');
 }
 
-Future<String> httpGet(String url) {
+Future<String> getNombre(String id) async {
+  return 'Nombre: $id';
+}
+
+Future<String> httpGet(String url) async {
   /*
   return Future.delayed(
      Duration(seconds: 3), () {
